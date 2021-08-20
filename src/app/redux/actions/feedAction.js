@@ -7,7 +7,7 @@ function dispatchEvent(type, data) {
     }
 }
 
-export const fetchFeed = () => {
+export const fetchFeed = (searchInput) => {
     return (dispatch) => {
         dispatch(dispatchEvent(FEED_FETCHING, true))
         setTimeout(() => {

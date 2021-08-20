@@ -1,9 +1,11 @@
 import React from 'react'
-
-
-const SearchBox = () => {
+import InputBox from '../../../../components/input-box'
+import Utils from '../../../../utils'
+const SearchBox = ({ value, onChange }) => {
     return (
-        <h1>Search box</h1>
+        <div>
+            <InputBox value={value} type="search" others={{}} onChange={onChange} />
+        </div>
     )
 }
 

@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Feed from '../containers/feed'
 
-export default function App() {
+export default function BaseRouter() {
     return (
         <Router>
             <Switch>

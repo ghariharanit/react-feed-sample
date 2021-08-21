@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import InputBox from '../../../../components/input-box'
-import Utils from '../../../../utils'
 const SearchBox = ({ value, onChange }) => {
     return (
         <div>
@@ -10,3 +11,8 @@ const SearchBox = ({ value, onChange }) => {
 }
 
 export default SearchBox
+
+SearchBox.prototype = {
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired
+}

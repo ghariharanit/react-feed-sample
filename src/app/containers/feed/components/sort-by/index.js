@@ -1,9 +1,12 @@
 import React from 'react'
 
-
-const SortBy = () => {
+const SortBy = ({ value, onChange }) => {
     return (
-        <h1>Sory By</h1>
+        <select value={value} name="sort-by" onChange={(e) => { onChange(e.target.value) }}>
+            <option value=""></option>
+            <option value="title">Title</option>
+            <option value="dateLastEditedTimeStamp">Date Last Edited</option>
+        </select>
     )
 }
 

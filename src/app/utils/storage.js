@@ -3,7 +3,8 @@ const Storage = localStorage
 
 export default {
     KEYS: {
-        SEARCH_VALUE: 'searchValue'
+        SEARCH_VALUE: 'searchValue',
+        SORT_BY: 'sortBy'
     },
     setItem(key, data) {
         try {

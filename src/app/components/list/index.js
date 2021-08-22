@@ -9,7 +9,7 @@ export default function ({ data, renderItem, countPerPage }) {
     return (
         <>
             {/* <Pagination itemsPerPage={10} length={100} pageLimit={5} /> */}
-            <div>
+            <div className={"row"}>
                 {results}
             </div>
         </>

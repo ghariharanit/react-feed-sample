@@ -1,7 +1,8 @@
 import React from 'react'
+import './style.scss'
 export default function () {
     return (
-        <div>
+        <div className={"loader"}>
             Loading...
         </div>
     )

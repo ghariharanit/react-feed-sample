@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import './style.scss'
 import InputBox from '../../../../components/input-box'
 const SearchBox = ({ value, onChange }) => {
     return (

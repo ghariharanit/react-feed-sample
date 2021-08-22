@@ -35,8 +35,8 @@ const Feed = (props) => {
     const renderContent = () => {
         return (
             <div>
-                <FeedList data={props.feedList} countPerPage={10} />
-                <FeedTable />
+                {props.feedList && props.feedList.length ? <FeedList data={props.feedList} countPerPage={12} /> : <div className={"noData"}>No Data</div>}
+                {/* <FeedTable /> */}
             </div>
         )
     }

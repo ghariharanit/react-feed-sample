@@ -8,7 +8,7 @@ export default function ({ data, renderItem, countPerPage }) {
     const onChangePage = (page) => {
         let val = (page + 1) * countPerPage
         setEndIndex(val - 1)
-        setStartIndex(val - countPerPage - 1)
+        setStartIndex(val - countPerPage)
     }
     const results = data.map((item, index) => {
         if (index >= startIndex && index <= endIndex)
@@ -20,7 +20,6 @@ export default function ({ data, renderItem, countPerPage }) {
 
     return (
         <>
-            {pagination}
             <div className={"row"}>
                 {results}
             </div>

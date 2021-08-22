@@ -1,10 +1,33 @@
+// .inputContainer div {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   flex: 0 1 100%;
+//   margin: 2%;
+//   div {
+//     margin: 2%;
+//   }
+//   div {
+//     width: 100%;
+//     input,
+//     select {
+//       width: 100%;
+//     }
+//   }
+// }
+
 .inputContainer {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex: 0 1 50%;
+  flex-direction: column;
   margin: 2%;
+  div {
+    margin: 2%;
+    input,
+    select {
+      width: 100%;
+    }
+  }
 }
 
 .noData {
@@ -15,4 +38,37 @@
   transform: -webkit-translate(-50%, -50%);
   transform: -moz-translate(-50%, -50%);
   transform: -ms-translate(-50%, -50%);
+}
+
+.feedTable {
+  margin: 5%;
+}
+
+@media only screen and (min-width: 600px) {
+  .feedTable {
+    margin: 2%;
+  }
+  .inputContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0%;
+  }
+  // .inputContainer div {
+  //   flex: 0 1 50%;
+  //   justify-content: space-between;
+  // }
+}
+@media only screen and (min-width: 768px) {
+  .feedTable {
+    margin: 2%;
+  }
+  .inputContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0%;
+  }
+  // .inputContainer div {
+  //   flex: 0 1 50%;
+  //   justify-content: space-between;
+  // }
 }

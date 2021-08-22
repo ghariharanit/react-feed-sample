@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-export default function InputBox({ value, type, onChange, className, others } = {}) {
+function InputBox({ placeholder, value, type, onChange, className, others } = {}) {
     return (
-        <input className={className} value={value} type={type} {...others} onChange={(e) => onChange(e.target.value)} />
+        <input placeholder={placeholder} className={className} value={value} type={type} {...others} onChange={(e) => onChange(e.target.value)} />
     )
 }
 InputBox.propTypes = {
@@ -11,4 +11,6 @@ InputBox.propTypes = {
     onChange: PropTypes.func.isRequired,
     className: PropTypes.string,
     others: PropTypes.object,
+    placeholder: PropTypes.string
 }
+export default InputBox

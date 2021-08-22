@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import Pagination from '../pagination'
-export default function ({ data, renderItem, countPerPage }) {
+function List({ data, renderItem, countPerPage }) {
 
     const [startIndex, setStartIndex] = useState(0)
     const [endIndex, setEndIndex] = useState(countPerPage - 1)
@@ -26,5 +27,10 @@ export default function ({ data, renderItem, countPerPage }) {
             {pagination}
         </>
     )
-
 }
+List.prototype = {
+    data: PropTypes.array.isRequired,
+    renderItem: PropTypes.func.isRequired,
+    countPerPage: PropTypes.number.isRequired
+}
+export default List

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './style.scss'
 const SortBy = ({ value, onChange }) => {
     return (
@@ -10,6 +11,11 @@ const SortBy = ({ value, onChange }) => {
             </select>
         </div>
     )
+}
+
+SortBy.prototype = {
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired
 }
 
 export default SortBy

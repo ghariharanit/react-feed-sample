@@ -11,6 +11,8 @@ import Loader from '../../components/loader'
 import { fetchFeed } from '../../redux/actions/feedAction'
 
 import './style.scss'
+import PropTypes from 'prop-types'
+import { PAGINATION_COUNT } from '../../config/APP_CONST'
 
 const Feed = (props) => {
 
@@ -34,10 +36,20 @@ const Feed = (props) => {
 
     const renderContent = () => {
         return (
-            <div>
-                {props.feedList && props.feedList.length ? <FeedList data={props.feedList} countPerPage={12} /> : <div className={"noData"}>No Data</div>}
-                {/* <FeedTable /> */}
-            </div>
+            <>
+                {(props.feedList && props.feedList.length) ?
+                    (
+                        <>
+                            <div>
+                                <FeedList data={props.feedList} countPerPage={PAGINATION_COUNT} />
+                            </div>
+                            <div className={"feedTable"}>
+                                <FeedTable data={props.feedList} />
+                            </div>
+                        </>
+                    )
+                    : <div className={"noData"}>No Data</div>}
+            </>
         )
     }
 
@@ -61,4 +73,11 @@ const mapStateToProps = (state) => {
 const mapDispathToProps = {
     fetchFeed
 }
+
+Feed.prototype = {
+    feedList: PropTypes.array.isRequired,
+    isFeedFetching: PropTypes.bool.isRequired,
+    fetchFeed: PropTypes.func.isRequired
+}
+
 export default connect(mapStateToProps, mapDispathToProps)(Feed)

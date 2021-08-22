@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import './style.scss'
-export default function Pagination({ length, itemsPerPage, pageLimit, onChangePage }) {
+function Pagination({ length, itemsPerPage, pageLimit, onChangePage }) {
 
     const [currentP, setCurrentP] = useState(0)
     const [curretPage, setCurrentPage] = useState(0)
@@ -55,3 +55,4 @@ Pagination.prototype = {
     pageLimit: PropTypes.number.isRequired,
     onChangePage: PropTypes.func.isRequired
 }
+export default Pagination

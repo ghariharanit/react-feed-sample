@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Pagination from '../pagination'
+import { PAGINATION_COUNT } from '../../config/APP_CONST'
 function List({ data, renderItem, countPerPage }) {
 
     const [startIndex, setStartIndex] = useState(0)
@@ -11,9 +12,12 @@ function List({ data, renderItem, countPerPage }) {
         setEndIndex(val - 1)
         setStartIndex(val - countPerPage)
     }
+    let count = 0
     const results = data.map((item, index) => {
-        if (index >= startIndex && index <= endIndex)
+        count = count + 1
+        if (index >= startIndex && index <= endIndex) {
             return renderItem(item, index)
+        }
         return null
     })
 
@@ -24,7 +28,7 @@ function List({ data, renderItem, countPerPage }) {
             <div className={"row"}>
                 {results}
             </div>
-            {pagination}
+            {count > PAGINATION_COUNT ? pagination : null}
         </>
     )
 }

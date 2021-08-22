@@ -35,7 +35,7 @@ function Pagination({ length, itemsPerPage, pageLimit, onChangePage }) {
                 pagination
             }
             {
-                pageLimit >= endIndex + 1 ? <div>...</div> : null
+                (page > pageLimit) && (pageLimit >= endIndex + 1) ? <div>...</div> : null
             }
             <button disabled={curretPage === page - 1} onClick={() => {
                 onChangePage(curretPage + 1)
